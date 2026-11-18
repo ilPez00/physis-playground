@@ -1,0 +1,198 @@
+.physis-live {
+  min-height: 100vh;
+  background: #0f1625;
+  color: #e8eef5;
+  display: flex;
+  flex-direction: column;
+}
+
+.physis-live-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  border-bottom: 1px solid #22314a;
+}
+
+.physis-live-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8fa3b8;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.physis-live-back:hover {
+  color: #e8eef5;
+}
+
+.physis-live-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.physis-live-sub {
+  font-size: 12px;
+  color: #8fa3b8;
+  margin: 2px 0 0;
+}
+
+.physis-live-reload {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a2840;
+  color: #cfd8e3;
+  border: 1px solid #2c3f5c;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.physis-live-reload:hover {
+  background: #22314a;
+}
+
+.physis-live-error {
+  margin: 24px;
+  padding: 16px;
+  border: 1px solid #d13438;
+  border-radius: 8px;
+  background: #2a1215;
+  font-size: 13px;
+}
+
+.physis-live-error code {
+  display: block;
+  margin: 8px 0;
+  color: #ffb3b6;
+}
+
+.physis-live-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.physis-live-graph {
+  flex: 1;
+  min-width: 0;
+}
+
+.physis-live-inspector {
+  width: 320px;
+  border-left: 1px solid #22314a;
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+.physis-live-inspector h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8fa3b8;
+  margin: 0 0 10px;
+}
+
+.physis-live-hint {
+  color: #8fa3b8;
+}
+
+.physis-live-inspector h3 {
+  font-size: 13px;
+  margin: 0 0 10px;
+  word-break: break-all;
+}
+
+.physis-live-confidence {
+  color: #8fa3b8;
+  font-weight: normal;
+}
+
+.physis-live-evidence {
+  border: 1px solid #22314a;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: #141f33;
+}
+
+.physis-live-evidence-head {
+  font-weight: 600;
+}
+
+.physis-live-evidence-time {
+  color: #8fa3b8;
+  font-size: 12px;
+}
+
+.physis-live-evidence-why {
+  margin-top: 4px;
+  color: #cfd8e3;
+}
+
+.physis-live-absent {
+  color: #ffb3b6;
+  border: 1px dashed #d13438;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.physis-live-kinds {
+  margin-top: 18px;
+}
+
+.physis-live-kinds ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.physis-live-kinds li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.physis-live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.physis-live-count {
+  color: #8fa3b8;
+}
+
+.physis-live-limits {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #22314a;
+  color: #8fa3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .physis-live-body {
+    flex-direction: column;
+  }
+
+  .physis-live-inspector {
+    width: auto;
+    border-left: none;
+    border-top: 1px solid #22314a;
+  }
+
+  .physis-live-graph {
+    min-height: 320px;
+  }
+}

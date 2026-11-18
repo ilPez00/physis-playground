@@ -14,6 +14,7 @@ import {
   ImportExportModal,
   FabricExportModal,
   GalleryModal,
+  PhysisLivePage,
   OntologySummaryModal,
   OntologyDesigner,
   LearnPage,
@@ -265,6 +266,9 @@ function App() {
   }
   if (route.page === 'learn') {
     return <LearnPage route={route} />;
+  }
+  if (route.page === 'physis') {
+    return <PhysisLivePage />;
   }
 
   return (

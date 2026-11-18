@@ -24,3 +24,4 @@ export type { CommandItem } from './CommandPalette';
 export { GuidedTour, isTourDismissed } from './GuidedTour';
 export { OntologyStatsPanel } from './OntologyStatsPanel';
 export { PathFinderPanel } from './PathFinderPanel';
+export { PhysisLivePage } from './PhysisLivePage';

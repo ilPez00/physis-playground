@@ -21,7 +21,8 @@ export type Route =
   | { page: 'embed'; ontologyId: string }
   | { page: 'designer'; ontologyId?: string }
   | { page: 'learn'; courseSlug?: string; articleSlug?: string }
-  | { page: 'share'; data: string };
+  | { page: 'share'; data: string }
+  | { page: 'physis' };
 
 /**
  * Validate and sanitize an ontology ID parsed from the URL hash.
@@ -88,6 +89,9 @@ export function parseHash(hash: string): Route {
     const id = sanitizeOntologyId(rest.join('/'));
     return { page: 'designer', ontologyId: id };
   }
+  if (segments[0] === 'physis' && segments.length === 1) {
+    return { page: 'physis' };
+  }
   if (segments[0] === 'learn') {
     if (segments.length === 1) return { page: 'learn' };
     const courseSlug = sanitizeOntologyId(segments[1]);
@@ -133,6 +137,8 @@ export function routeToHash(route: Route): string {
       return '#/learn';
     case 'share':
       return `#/share/${route.data}`;
+    case 'physis':
+      return '#/physis';
     case 'home':
     default:
       return '#/';

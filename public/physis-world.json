@@ -1,0 +1,160 @@
+{
+  "schema": "physis-playground/1",
+  "world": {
+    "name": "Cross-domain demo world",
+    "seqCut": 7,
+    "exportedAt": "2026-11-18T08:16:18.602Z"
+  },
+  "limits": {
+    "statement": "Read-only projection of a Physis world at the recorded seq cut. Not a live view and never a second source of truth: every fact here exists because the engine holds it, with its grounding observations attached. Absence of evidence is stated as absence."
+  },
+  "entityTypes": [
+    {
+      "id": "asset",
+      "name": "asset",
+      "count": 1
+    },
+    {
+      "id": "ext",
+      "name": "ext",
+      "count": 1
+    },
+    {
+      "id": "geo",
+      "name": "geo",
+      "count": 2
+    },
+    {
+      "id": "item",
+      "name": "item",
+      "count": 1
+    },
+    {
+      "id": "job",
+      "name": "job",
+      "count": 1
+    },
+    {
+      "id": "location",
+      "name": "location",
+      "count": 1
+    },
+    {
+      "id": "org",
+      "name": "org",
+      "count": 1
+    },
+    {
+      "id": "place",
+      "name": "place",
+      "count": 1
+    }
+  ],
+  "objects": [
+    {
+      "id": "asset:depot-milazzo",
+      "kind": "asset",
+      "label": "depot-milazzo",
+      "evidence": []
+    },
+    {
+      "id": "ext:open-meteo:weather:38.2200,15.2400",
+      "kind": "ext",
+      "label": "38.2200,15.2400",
+      "evidence": [
+        {
+          "seq": 0,
+          "at": "2026-11-17T10:34:17.881534648+00:00",
+          "source": "connector:open-meteo",
+          "producedBy": "physis ingest open-meteo"
+        }
+      ]
+    },
+    {
+      "id": "geo:usgs:quakes:usgs:us7000txgq",
+      "kind": "geo",
+      "label": "M4.6 54 km WNW of Malfa, Italy",
+      "evidence": [
+        {
+          "seq": 2,
+          "at": "2026-11-17T10:35:25.765321340+00:00",
+          "source": "connector:usgs",
+          "producedBy": "physis ingest usgs"
+        }
+      ]
+    },
+    {
+      "id": "geo:usgs:quakes:usgs:us7000tyrc",
+      "kind": "geo",
+      "label": "M4.2 58 km WNW of Malfa, Italy",
+      "evidence": [
+        {
+          "seq": 1,
+          "at": "2026-11-17T10:35:25.765307594+00:00",
+          "source": "connector:usgs",
+          "producedBy": "physis ingest usgs"
+        }
+      ]
+    },
+    {
+      "id": "item:crate-aeolian-1",
+      "kind": "item",
+      "label": "crate-aeolian-1",
+      "evidence": []
+    },
+    {
+      "id": "job:freight-run-1",
+      "kind": "job",
+      "label": "freight-run-1",
+      "evidence": []
+    },
+    {
+      "id": "location:depot-milazzo",
+      "kind": "location",
+      "label": "depot-milazzo",
+      "evidence": []
+    },
+    {
+      "id": "org:tyrrhenian-freight",
+      "kind": "org",
+      "label": "tyrrhenian-freight",
+      "evidence": []
+    },
+    {
+      "id": "place:milazzo",
+      "kind": "place",
+      "label": "milazzo",
+      "evidence": []
+    }
+  ],
+  "relations": [
+    {
+      "from": "location:depot-milazzo",
+      "verb": "STOCKED_AT",
+      "to": "item:crate-aeolian-1",
+      "confidence": 1,
+      "evidence": [
+        {
+          "seq": 6,
+          "at": "2026-11-17T10:59:32.750419+00:00",
+          "source": "host",
+          "producedBy": "operator declare (cross-domain demo): depot stocks cargo"
+        }
+      ]
+    },
+    {
+      "from": "job:freight-run-1",
+      "verb": "REQUIRES",
+      "to": "item:crate-aeolian-1",
+      "confidence": 1,
+      "evidence": [
+        {
+          "seq": 7,
+          "at": "2026-11-17T10:59:32.750461+00:00",
+          "source": "host",
+          "producedBy": "operator declare (cross-domain demo): freight run requires cargo"
+        }
+      ]
+    }
+  ]
+}
