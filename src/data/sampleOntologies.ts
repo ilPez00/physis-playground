@@ -1,11 +1,12 @@
 import type { Ontology, DataBinding } from './ontology';
+import { physisWorldEntry } from './physisWorld';
 
 export interface SampleOntologyEntry {
   id: string;
   name: string;
   description: string;
   icon: string;
-  category: 'retail' | 'healthcare' | 'finance' | 'manufacturing' | 'education' | 'iq-lab';
+  category: 'retail' | 'healthcare' | 'finance' | 'manufacturing' | 'education' | 'iq-lab' | 'technology';
   ontology: Ontology;
   bindings: DataBinding[];
 }
@@ -481,7 +482,8 @@ export const sampleOntologies: SampleOntologyEntry[] = [
     category: "education",
     ontology: universityOntology,
     bindings: []
-  }
+  },
+  physisWorldEntry
 ];
 
 export const categoryLabels: Record<string, string> = {
@@ -490,7 +492,8 @@ export const categoryLabels: Record<string, string> = {
   finance: "Finance",
   manufacturing: "Manufacturing",
   education: "Education",
-  'iq-lab': "IQ Lab"
+  'iq-lab': "IQ Lab",
+  technology: "Technology"
 };
 
 export const categoryColors: Record<string, string> = {
@@ -499,5 +502,6 @@ export const categoryColors: Record<string, string> = {
   finance: "#107C10",
   manufacturing: "#FFB900",
   education: "#8764B8",
-  'iq-lab': "#0099BC"
+  'iq-lab': "#0099BC",
+  technology: "#5C2E91"
 };

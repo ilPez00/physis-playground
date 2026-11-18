@@ -1,0 +1,14 @@
+{
+  "name": "Physis World Model",
+  "description": "A canonical Physis world: observations from named sources, identity established across domains, and inferences whose premises are visible.",
+  "icon": "🌐",
+  "category": "technology",
+  "tags": [
+    "physis",
+    "world-model",
+    "provenance",
+    "truth-maintenance",
+    "demo"
+  ],
+  "author": "physis-playground"
+}

@@ -225,7 +225,7 @@ export function Header({ onAboutClick, onHelpClick, onDataSourcesClick, onImport
         </svg>
         <div>
           <span className="header-title">
-            Ontology Playground <span className="header-title-preview">(Preview)</span>
+            Physis World Model Playground
           </span>
           <span className="header-context">{ontologyDisplayName}</span>
         </div>
