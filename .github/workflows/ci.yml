@@ -39,6 +39,11 @@ jobs:
 
       - name: Lint
         run: npm run lint
+      - name: Browser-verify the deployed Physis fixture
+        run: node scripts/verify-physis-fixture.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/chromium
+
 
       - name: Type check
         run: npx tsc -b
