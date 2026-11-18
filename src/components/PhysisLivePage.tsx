@@ -76,6 +76,14 @@ export function PhysisLivePage() {
             'text-halign': 'center',
             'font-size': 11,
             color: '#cfd8e3',
+            // Labels stay legible when a force pass leaves two nodes close:
+            // the plate behind the text costs nothing and reads on the dark
+            // canvas, which browser verification flagged as the page's main
+            // readability defect.
+            'text-background-color': '#101820',
+            'text-background-opacity': 0.85,
+            'text-background-padding': '2px',
+            'text-background-shape': 'roundrectangle',
             'text-margin-y': 6,
             width: 44,
             height: 44,
@@ -100,7 +108,29 @@ export function PhysisLivePage() {
           },
         },
       ],
-      layout: { name: 'cose', animate: false, randomize: true } as cytoscape.LayoutOptions,
+      // Small snapshots (the common case for a demo world) get a
+      // deterministic circle: every node guaranteed its own arc, same
+      // snapshot renders the same picture. Larger ones keep the tuned force
+      // pass — a circle degrades past ~16 nodes, cose does not.
+      layout: (snapshot.objects.length <= 16
+        ? {
+            name: 'circle',
+            animate: false,
+            padding: 40,
+            avoidOverlap: true,
+            sort: (a: cytoscape.NodeSingular, b: cytoscape.NodeSingular) =>
+              a.id().localeCompare(b.id()),
+          }
+        : {
+            name: 'cose',
+            animate: false,
+            randomize: true,
+            padding: 40,
+            nodeOverlap: 32,
+            idealEdgeLength: 140,
+            nodeRepulsion: 240000,
+            gravity: 0.6,
+          }) as cytoscape.LayoutOptions,
     });
     cy.on('tap', 'edge', (evt) => {
       const rel = (evt.target as unknown as { relation?: SelectedEdge }).relation;
